@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+
+  <%- include('header.ejs') %>
+  <div class="container text-center">
+      <div class="row">
+        <% if (blogs && blogs.length > 0) { %>
+            <% blogs.forEach(blog => { %>
+              <div class="col custom-card">
+                <h3 class="mb-5"><a style="text-decoration: none; color: black;" href="/blogs/<%= blog.id %>"><%= blog.title %></a></h3>
+                <p><%= blog.content.substring(0, 100) %>...</p>
+                <p><small>Posted on <%= new Date(blog.createdAt).toLocaleDateString() %></small></p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center py-3">
+                <form action="/edit" method="get">
+                  <input type="hidden" name="id" value="<%= blog.id %>" />
+                  <button type="submit" class="btn btn-primary px-4 gap-3">Edit</button>
+                </form>
+                <form action="/delete" method="POST">
+                  <input type="hidden" name="id" value="<%= blog.id %>" />
+                  <button type="submit" class="btn btn-danger px-4">Delete</button>
+                </form>
+                </div>
+              </div>  
+            <% }) %>
+
+        <% } else { %>
+          <p>No blogs available. Please check back later.</p>
+        <% } %>
+          
+
+  </div>
+  </div>
+</body>
+
+</html>

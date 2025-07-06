@@ -1,0 +1,116 @@
+#features{
+  margin-top:50px
+}
+
+
+.gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: cover;
+  animation: gradient-animation 18s ease infinite;
+  height: max-content;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+}
+
+.grid-item {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.grid-item>img{
+  justify-content: left;
+}
+
+.grid-container-features{
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr 2fr 0.5fr 2fr;
+  padding: 50px;
+}
+
+.grid-item-features {
+  padding: 20px;
+  text-align: right;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.grid-item-features>div{
+  justify-content: right;
+  align-items: left
+}
+
+.svg-container {
+  background-color: lightgray; 
+  border-radius: 10px; 
+  display: inline-block; 
+  padding: 10px;
+}
+.h2{
+  font-weight: 700;
+  padding: 0px;
+}
+
+
+
+.btn-title{
+  padding: 15px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: white;
+  border: none;
+  color: black;
+}
+
+.btn-secondary {
+  background-color: inherit;
+  border: 1px solid white;
+  color: white;
+}
+
+#testimonial{
+  background-color: #f0f0f0;
+  padding: 50px;
+}
+
+
+
+#pricing > .container{
+  padding: 0px;
+}
+
+#footer >.row{
+  text-align: center;
+}
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.profile-img {
+  height: 100px;
+  border-radius: 50%;
+}

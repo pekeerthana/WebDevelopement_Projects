@@ -1,0 +1,39 @@
+/* Write your code here: */
+
+
+/* combining selectors */
+h1, h2
+{
+  color: blueviolet;
+}
+
+/* child selector */
+
+/* div > p
+{
+  color: firebrick;
+} */
+
+.box > .done{
+  color: firebrick;
+}
+
+/* .list > li{
+  color: green;
+} */
+
+/* descendant selector */
+.box  li{
+  color: blue;
+}
+
+/* chaining selector */
+li.done{
+  color: seagreen;
+}
+
+/* combining selectors */
+
+ul p.done{
+  font-size: 0.5rem;
+}

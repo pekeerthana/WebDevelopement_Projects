@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <%- include('header.ejs') %>
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5"> 
+    <div class="row align-items-center g-lg-5 py-5">
+       <div class="col-lg-7 text-center text-lg-start">
+         <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Add new blog</h1> 
+         <p class="col-lg-10 fs-4">
+            Use this space to convert your thoughts to words.Make sure to fill in all the required fields before submitting.
+         </p>
+         </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" action="/update" method="post">
+              <input type="hidden" name="id" value="<%= id %>" />
+              <label for="title">Title</label> 
+              <div>
+                <input type="text" class="form-control" name="title" id="title" required> 
+              </div>
+              <label for="content">Content</label>
+              <div>
+                <textarea name="content" class="form-control" id="content" required></textarea>
+              </div>
+              <br/>
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Add</button>
+            </form>
+          </div> 
+      </div>
+    </div>
+</body>
+</html>

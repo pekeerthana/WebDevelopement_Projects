@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="/styles/style.css" rel="stylesheet">
+    <link href="/styles/carousel.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container marketing">
+        <form action="/image" method="post">
+            <button type="submit" class="btn btn-primary">Image</button>
+        </form>
+        <% for(let book of books){%>
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">
+                        <%= book.title %>
+                    </h2>
+                    <p class="lead">
+                        <%= book.subtitle %>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <svg aria-label="Placeholder: 500x500"
+                        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" height="500"
+                        width="500" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice" role="img"
+                        xmlns="http://www.w3.org/2000/svg">
+
+                        <title>Placeholder</title>
+
+                        <!-- ✅ Background Image -->
+                        <image href="/0006000000-L.jpg" x="0" y="0" 
+                        <!-- width="500" height="500" -->
+                            preserveAspectRatio="xMidYMid slice" />
+
+                        <!-- Optional overlay text -->
+                        <text x="50%" y="50%" fill="white" dy=".3em" text-anchor="middle" alignment-baseline="middle"
+                            font-size="24">
+                            500x500
+                        </text>
+                    </svg>
+                </div>
+            </div>
+            <form action ="/delete" method="POST"> 
+                <input type="hidden" name="id" value = <%= book.id %>/>
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+            <form action ="/edit" method="GET"> 
+                <input type="hidden" name="id" value = <%= book.id %>/>
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+            <hr class="featurette-divider">
+            <% } %>
+
+    </div>
+
+</body>
+
+</html>
